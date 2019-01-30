@@ -4,8 +4,8 @@
    Case Problem 3
 
    Pixal Arts and Entertainment Animation Styles
-   Author: 
-   Date:   
+   Author: Jose Felix
+   Date:   1.29.19
 
    Filename: 
    
@@ -20,9 +20,27 @@
 
 
 /* Transition Effects */
+nav#gameLinks a {
+    position: relative;
+    color: white;
+    transition: color 0.5s;
+}
 
+nav#gameLinks a:hover {
+    color: rgb(255, 194, 99);
+}
 
-
+nav#gameLinks a::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 0px;
+    height: 8px;
+    background: linear-gradient(rgb(237, 243, 71),  rgb(188, 74, 0));
+    border-radius: 4px;
+    opacity: 0;
+}
 
 /* Sprite Styles */
 
