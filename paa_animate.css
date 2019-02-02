@@ -7,7 +7,7 @@
    Author: Jose Felix
    Date:   1.29.19
 
-   Filename: 
+   Filename: paa_animate.css
    
    Sprite animation is created using the paa_bat.png, 
    paa_bfly.png, and paa_fox.png image files.
@@ -15,6 +15,7 @@
    paa_bat.png has 40 frames
    paa_bfly.png has 34 frames
    paa_fox.png has 28 frames
+   ^^^not really sure what this means to be honest. 
 
 */
 
@@ -30,7 +31,7 @@ nav#gameLinks a {
 nav#gameLinks a:hover {
     color: rgb(255, 194, 99);
 }
-/* With this part of the code I made it have different backgrounds as they went along the path and that helped to make it change opacity and transition is established here. */
+/* With this part of the code I made it have different backgrounds as they went along the path and that helped to make it change opacity and transition is established here. Under transition there is the opacity and a change from 0.5 seconds of the hovwe in link. The width also changes in the same interval of time for consistency most likely and those two changes make the line that appears as you hover over the gameLinks section. */
 nav#gameLinks a::after {
     content: "";
     position: absolute;
@@ -43,6 +44,7 @@ nav#gameLinks a::after {
     opacity: 0;
     transition: opacity 0.5s, width 0.5s;
 }
+/* Now that the code is established above we can add the actual opacity to the after line only when it is completely hovered over. The transition is initialized in the after but the hover is what allows it to appear. This format is seen in the flex of pages as well, as the body is set with a flex and the actual dimensions are then given later in a more specific section of the code for what flexes how. */
 nav#gameLinks a:hover::after {
     opacity: 1;
     width: 100%;
@@ -53,7 +55,7 @@ div.sprite {
     position: absolute; 
 }
 
-/* The div bat has a comma to separate the two animation types and it has a the name delay interval steps and loop at the end. */
+/* The div bat has a comma to separate the two animation types and it has a the name delay interval steps and loop at the end. the top, width, height, left and such are placed there so that the information is shown cottectly due to the absolute positioning allowing for the code to be flown in using the transitions. */
 div#bat {
     width: 40px;
     height: 50px;
@@ -86,12 +88,13 @@ div#fox {
 
 
 /* Animation Styles */
+/* Keyframes are specific styles for certain intervals of times and these are what are drawn in the animations that occur on every div.  */
 @keyframes playSprite {
     100% {
         background-position: right center;
     }
 }
-
+/* This changes the top position of everything using the flyRight code when it needs to be done. The percentages are taken from the interval of time I do believe and so that makes sense for them to work only when a certain time is highlighted. */
 @keyframes flyRight {
     25% {
         top: 150px;
